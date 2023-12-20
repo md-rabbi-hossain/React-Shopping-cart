@@ -1,0 +1,11 @@
+.Home {
+    display: flex;
+}
+
+.product-container {
+    display: flex;
+    width: 78%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
