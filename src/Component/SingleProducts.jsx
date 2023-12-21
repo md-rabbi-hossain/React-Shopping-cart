@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 import { Button, Card, CardBody, CardImg, CardSubtitle, CardTitle } from 'react-bootstrap';
 import Rating from '../Component/Rating'
 import { cartcontext } from '../Context/Context';
+'../Css/Responsive.css'
 function SingleProducts({ product }) {
-
     const context = useContext(cartcontext)
     const { state, dispatch } = context
 
-    console.log(state);
     return (
         <div className='product' style={{ width: '30%', margin: '15px' }}>
             <Card>
@@ -17,13 +16,16 @@ function SingleProducts({ product }) {
                     <CardTitle>{product.name}</CardTitle>
                     <Card.Subtitle style={{ paddingBottom: 10 }}>
                         <span>$ {product.price.split(".")[0]}</span>
+
                         {product.fastDelivery ? (
                             <div>Fast Delivery</div>
                         ) : (
-                            <div>4 days delivery</div>
+                            <div>2 days delivery</div>
                         )}
+
                         <Rating rating={product.rating} />
                     </Card.Subtitle>
+
                     {state.cart.some((p) => p.id === product.id) ? (
                         <Button
                             variant="danger"

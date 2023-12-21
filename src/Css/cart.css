@@ -1,0 +1,34 @@
+.filters {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 10px;
+    height: 86vh;
+    border-radius: 10px;
+    position: sticky;
+    top: 10px;
+    left: 10px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.Home {
+    display: flex;
+}
+
+.product-container {
+    display: flex;
+    width: 78%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.summury {
+    width: 30%;
+}

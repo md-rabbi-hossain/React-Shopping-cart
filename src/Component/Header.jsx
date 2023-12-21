@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { cartcontext } from '../Context/Context';
 import { AiFillDelete } from 'react-icons/ai';
-
+import '../Css/Responsive.css'
 
 function Header() {
     const value = useContext(cartcontext)
-    const { state, dispatch } = value
+    const { state, dispatch, productDispatch } = value
+
     return (
         <div>
             <Navbar bg='dark' variant='dark' style={{ height: 80 }}>
@@ -21,7 +22,12 @@ function Header() {
                     <Navbar.Collapse className="justify-content-between">
                         <div className="d-flex">
                             <Navbar.Text className='search'>
-                                <FormControl style={{ width: 500, marginLeft: 150 }} placeholder='Search a product' />
+                                <FormControl style={{ width: 500, marginLeft: 150 }} placeholder='Search a product' onChange={(e) => {
+                                    productDispatch({
+                                        type: "FILTER_BY_SEARCH",
+                                        payload: e.target.value,
+                                    });
+                                }} />
                             </Navbar.Text>
                         </div>
                         <Dropdown drop='down-centered' className='mr-5' style={{ marginRight: 120 }}>
