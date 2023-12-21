@@ -90,11 +90,15 @@ function Filter() {
                         })
                     } style={{ cursor: "pointer" }} />
             </span>
-            <Button variant='light'> clear filter</Button>
+            <Button variant="light"
+                onClick={() =>
+                    productDispatch({
+                        type: "CLEAR_FILTERS",
+                    })
+                }> clear filter</Button>
         </div>
     );
 }
-
 export default Filter
 
 
